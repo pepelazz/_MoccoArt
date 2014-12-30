@@ -6,6 +6,61 @@
         ["processes.html",    "процессы"],
         ["articles.html",   "статьи"],
         ["contact.html",    "контакты"]
+    ],
+    "pictures":[
+        {
+            "fileName": "picture01",
+            "name": "Подарок от Курочки Рябы"
+        },
+        {
+            "fileName": "picture02",
+            "name": "В объятьях Хармса"
+        },
+        {
+            "fileName": "picture03",
+            "name": "Яблоки Матисса",
+            "status": "Находится в частной коллекции"
+        },
+        {
+            "fileName": "picture04",
+            "name": "Cалют.Астры",
+            "text": "poetry003"
+        },
+        {
+            "fileName": "picture05",
+            "name": "Сапфировый кофе",
+            "status": "Находится в частной коллекции"
+        },
+        {
+            "fileName": "picture06",
+            "name": "Радостная лейка"
+        },
+        {
+            "fileName": "picture07",
+            "name": "Букет для мамы",
+            "text": "poetry003"
+        },
+        {
+            "fileName": "picture08",
+            "name": "Миражи",
+            "text": "poetry001",
+            "status": "Находится в частной коллекции"
+        },
+        {
+            "fileName": "picture09",
+            "name": "На здоровье!"
+        },
+        {
+            "fileName": "picture10",
+            "name": "Доверие",
+            "text": "poetry004"
+        },
+        {
+            "fileName": "picture11",
+            "name": "Последний аккорд",
+            "status": "Находится в частной коллекции"
+
+        }
     ]
 
 }

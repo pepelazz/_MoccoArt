@@ -1,0 +1,46 @@
+extends index.jade
+block vars
+    - path="./"
+    - var activeNav='gallery'
+block content
+    div(ng-controller='picturesGallery')
+        ul.gallery-grid
+            each val, index in pictures
+                li
+                    .wrapper
+                        img(src='./images/pictures/#{val.fileName}-small.jpg' ng-click='galleryImg.show("#{index}")')
+                        if val.name
+                            .name #{val.name}
+                        if val.status
+                            .status #{val.status}
+                        if val.text
+                            case val.text
+                                when 'poetry001'
+                                    include ./includes/poetry/poetry001.jade
+                                when 'poetry002'
+                                    include ./includes/poetry/poetry002.jade
+                                when 'poetry003'
+                                    include ./includes/poetry/poetry003.jade
+                                when 'poetry004'
+                                    include ./includes/poetry/poetry004.jade
+        .modal-backdrop(ng-class='{show: galleryImg.isBackdropShow}')
+        div(ng-show='galleryImg.currentImgFileName!=null').modal-picture
+            .picture-wrapper
+                img(src='./images/icons/left-arrow-white.svg' ng-if='galleryImg.isNextLeft()' ng-click='galleryImg.nextLeft()').slider-arrow.left-arrow
+                img(ng-src='./images/pictures/{{galleryImg.currentImgFileName}}.jpg').picture
+                img(src='./images/icons/right-arrow-white.svg' ng-if='galleryImg.isNextRight()' ng-click='galleryImg.nextRight()').slider-arrow.right-arrow
+            img(src='./images/icons/close-white.svg' ng-click='galleryImg.close()').close
+
+block append scripts
+    script.
+        window.picturesArray = [];
+        var picturesList = !{JSON.stringify(pictures)};
+        i =0
+        for(pic in picturesList) {
+            window.picturesArray.push({"index": pic, "fileName": picturesList[pic].fileName})
+            i++
+        }
+
+
+
+

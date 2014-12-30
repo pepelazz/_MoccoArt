@@ -11,28 +11,39 @@ html(ng-app='app' ng-controller='main')
     title Mocco Art
     base(href="test.com" target="_self")
     //base(href="http://pepelazz.github.io/RusCatSite/" target="_self")
-    link(href='http://fonts.googleapis.com/css?family=Roboto:400,500,400italic,700&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Roboto:100,400,500,400italic,700&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css')
     block styles
         link(href="#{path}index.css" rel="stylesheet")
         link(href="#{path}libs/normalize.css" rel="stylesheet")
-  body
+  body(id='screen-#{activeNav}')
     .content
-        .wrapper
-              h1 Mocco Art
-              img(src='./images/pictures/picture01.jpg').picture
-              block content
+        .sidebar
+            a(href='/')
+                img(src='./images/logo.svg').logo
+            ul.nav
+                li
+                    a(href='./gallery.html') картины
+                li
+                    a(href='') события
+        .main-area
+          block content
 
 
 
 
+
+
+    img(src='./images/house-in-sea.jpg').house-in-sea
     .footer
-        .footer-grid
+        img(src='./images/girl-sea.png').girl-sea
 
 
 
-  script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
-  script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.js")
-  script(src="#{path}app.js")
+  block scripts
+      script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
+      script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.js")
+      script(src="#{path}libs/imagesloaded.pkgd.min.js")
+      script(src="#{path}app.js")
 
 
 
